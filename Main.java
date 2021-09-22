@@ -3,16 +3,15 @@ package com.company;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-	try(BufferedReader reader = new BufferedReader(new FileReader("expression.txt"))){
-	    String[] strnums = reader.readLine().split("\\*");
-	    Multiply(Integer.parseInt(strnums[0]), Integer.parseInt(strnums[1]));
-    } catch (IOException exception) {
-        System.out.println("Ошибка");
-    }
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введите выражение");
+        String[] expression = in.nextLine().split("\\*");
+        Multiply(Integer.parseInt(expression[0]), Integer.parseInt(expression[1]));
     }
 
     public static void Multiply(int x1, int x2){
